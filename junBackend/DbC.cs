@@ -9,6 +9,7 @@ namespace junBackend
 
         //ovde dodajemo klasu za bazu
         public DbSet<Aktivnost> aktivnost { get; set; }
+        public DbSet<Korisnik> korisnik { get; set; }
 
     }
 }

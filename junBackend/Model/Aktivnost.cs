@@ -8,5 +8,6 @@
         public int prioritet { get; set; }
         public string datum { get; set; }
         public string vreme { get; set; }
+        public int idKorisnika { get; set; }
     }
 }

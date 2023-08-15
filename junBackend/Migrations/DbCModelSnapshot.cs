@@ -33,6 +33,9 @@ namespace junBackend.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("idKorisnika")
+                        .HasColumnType("int");
+
                     b.Property<string>("opis")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -51,6 +54,27 @@ namespace junBackend.Migrations
                     b.HasKey("id");
 
                     b.ToTable("aktivnost");
+                });
+
+            modelBuilder.Entity("junBackend.Model.Korisnik", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<string>("ime")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("lozinka")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("korisnik");
                 });
 #pragma warning restore 612, 618
         }
